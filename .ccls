@@ -1,0 +1,4 @@
+make
+-I/Users/adrian/Developer/PlaydateSDK/C_API/
+-Ilibadder
+-DTARGET_EXTENSION

@@ -20,3 +20,6 @@ external/libmunit.a
 Source/pdex.*
 *.dylib
 *.pdx
+
+# Remove cache.
+.ccls-cache
