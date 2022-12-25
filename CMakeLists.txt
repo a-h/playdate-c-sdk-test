@@ -39,11 +39,21 @@ if(TARGET_GROUP STREQUAL test)
 
 	add_subdirectory(external)
 	add_subdirectory(test)
+	add_subdirectory(libadder)
 else()
+	add_subdirectory(libadder)
 	if (TOOLCHAIN STREQUAL "armgcc")
 		add_executable(${PLAYDATE_GAME_DEVICE} ${SDK}/C_API/buildsupport/setup.c src/main.c)
+		target_include_directories(${PLAYDATE_GAME_DEVICE} PUBLIC
+															libadder/
+															)
+		target_link_libraries(${PLAYDATE_GAME_DEVICE} PUBLIC libadder)
 	else()
 		add_library(${PLAYDATE_GAME_NAME} SHARED src/main.c )
+		target_include_directories(${PLAYDATE_GAME_NAME} PUBLIC
+															libadder/
+															)
+		target_link_libraries(${PLAYDATE_GAME_NAME} PUBLIC libadder)
 	endif()
 
 	include(${SDK}/C_API/buildsupport/playdate_game.cmake)
