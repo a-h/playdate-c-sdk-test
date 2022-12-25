@@ -30,7 +30,7 @@ set(PLAYDATE_GAME_DEVICE hello_world_DEVICE)
 
 project(${PLAYDATE_GAME_NAME} C ASM)
 
-set(TARGET_GROUP production CACHE STRING "Group to build")
+set(TARGET_GROUP production STRING "Group to build")
 
 project(${PLAYDATE_GAME_NAME} C ASM)
 
